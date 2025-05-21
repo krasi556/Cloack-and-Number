@@ -1,5 +1,4 @@
 import random
-chances = int(input('How many tries do you want?\n'))
 while True:
     chances = int(input('How many tries do you want?\n'))
     if chances <= 0:
