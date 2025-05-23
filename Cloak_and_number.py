@@ -1,7 +1,7 @@
 import random
 rules = print('\nThis is game of cloak and number!\nFirst you choose how many runs you want,\nthen you choose a number '
               'of your choice.\nWin to earn trophies!\n')
-emoji = ['🍕','🍔','🍟','🍫','🍨','🌭','🥪','🌮','🌯','🥙','🍝','🍝','🍜','🥠,''🥟','🍣'
+emoji = ['🍕','🍔','🍟','🍫','🍨','🌭','🥪','🌮','🌯','🥙','🍝','🍜','🥠','🥟','🍣'
          ]
 random_emoji = random.choice(emoji)
 emoji_count = []
@@ -72,7 +72,7 @@ while True:
             for i in (emoji):
                 if i not in emoji_count:
                     print(f'Here something for your journey!\n{i}')
-                    emoji_count += i
+                    emoji_count.append(i)
                     break
             if len(emoji_count) != 0:
                 print(f'Your trophies so far: {"".join(emoji_count)}')
@@ -80,8 +80,10 @@ while True:
             print('No trophie for  you ! ')
         else:
             print('No cookie for you, you didn\'t choose one from the options above!')
+    if len(emoji_count) == len(emoji):
+        print("Wow! You've collected all trophies!")
+        exit()
     try_again = int(input('Do you wish to try again?!\nFor Yes press 1,\nFor No press 2\n'))
-        
     if try_again != 1:
         print('Thanks for playing!\n')
         exit()
