@@ -60,15 +60,15 @@ while True:
         else:
             print('Too high')
         chances -= 1
+        print(f'Chances left: {chances}\n')
     if not is_found:
-        print('You failed to find it !\n')
+        print(f'You failed to find it !\n')
     else:
         is_winner = True
         prize = input('Want to reveal your prize ?!\n\nFor Yes press 1,\nFor No press 2\n')
         if prize not in digits:
-            print('No cookie for you, you didn\'t choose one from the options above!')
-        prize = int(prize)
-        if prize == 1:
+            print('No cookie for you, you didn\'t choose one of the options above!')
+        elif prize == '1':
             for i in (emoji):
                 if i not in emoji_count:
                     print(f'Here something for your journey!\n{i}')
@@ -76,7 +76,7 @@ while True:
                     break
             if len(emoji_count) != 0:
                 print(f'Your trophies so far: {"".join(emoji_count)}')
-        elif prize == 2:
+        elif prize == '2':
             print('No trophie for  you ! ')
         else:
             print('No cookie for you, you didn\'t choose one from the options above!')
